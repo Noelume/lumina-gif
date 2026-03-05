@@ -1,0 +1,8 @@
+{
+  "project_name": "lumina-gif",
+  "search": {
+    "exclude": [
+      "node_modules/**"
+    ]
+  }
+}
