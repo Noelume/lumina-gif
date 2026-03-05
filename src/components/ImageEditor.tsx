@@ -37,9 +37,10 @@ export function ImageEditorPreview({ imageFile, options }: ImageEditorPreviewPro
         canvas.width = previewWidth; canvas.height = height;
         ctx.drawImage(img, 0, 0, previewWidth, height);
 
+        const base = import.meta.env.BASE_URL || '/';
         const [pencilTexture, watermarkImage] = await Promise.all([
-          loadImage('/assets/pencil-texture.jpg'),
-          loadImage('/assets/one-last-image-logo2.png')
+          loadImage(`${base}assets/pencil-texture.jpg`),
+          loadImage(`${base}assets/one-last-image-logo2.png`)
         ]);
         
         applyOneLastKissFilter(canvas, ctx, {

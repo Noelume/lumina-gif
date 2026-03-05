@@ -25,9 +25,10 @@ export async function processImage(
   options: OneLastKissOptions
 ): Promise<string> {
   // Load assets first
+  const base = import.meta.env.BASE_URL || '/';
   const [pencilTexture, watermarkImage] = await Promise.all([
-    loadImage('/assets/pencil-texture.jpg'),
-    loadImage('/assets/one-last-image-logo2.png')
+    loadImage(`${base}assets/pencil-texture.jpg`),
+    loadImage(`${base}assets/one-last-image-logo2.png`)
   ]);
 
   return new Promise((resolve, reject) => {
